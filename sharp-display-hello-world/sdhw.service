@@ -1,0 +1,8 @@
+[Unit]
+Description=Sharp Display Hello World
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/sharp-display-hello-world/hello-world.py
+
+[Install]
+WantedBy=multi-user.target
