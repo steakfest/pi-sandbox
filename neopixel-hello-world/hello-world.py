@@ -11,13 +11,7 @@ if len(sys.argv) > 1 and sys.argv[1] == 'stop':
         pixels[p] = (0,0,0)
     sys.exit(0)
 
-delay = 0.1
-
-pixels[0] = (255,255,255)
-pixels[1] = (255,255,255)
-pixels[2] = (255,255,255)
-pixels[3] = (255,255,255)
-
+delay = 1.1
 
 def resetPixels():
     pixels[0] = (0,0,0)

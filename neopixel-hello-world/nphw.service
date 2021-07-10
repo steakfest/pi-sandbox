@@ -1,0 +1,8 @@
+[Unit]
+Description=NeoPixel Hello World
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/neo-pixel-helloworld/hello-world.py
+
+[Install]
+WantedBy=multi-user.target
