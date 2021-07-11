@@ -7,7 +7,7 @@ TAIL = "    "
 
 class DoubleSegment():
 	"""A Class for managing two i2c alphanumeric Segments"""
-	def __init__(self, i2c, leftAddr, rightAddr):
+	def __init__(self, leftAddr, rightAddr):
 		i2c = board.I2C()
 		leftDisplay  = Seg14x4(i2c, leftAddr)
 		rightDisplay = Seg14x4(i2c, rightAddr)
@@ -24,7 +24,7 @@ class DoubleSegment():
 		leftDisplay.print(value)
 		rightDisplay.print(value)
 
-doubleSegment = DoubleSegment()
+doubleSegment = DoubleSegment(0x70, 0x71)
 
 doubleSegment.print("JOHN")
 
