@@ -10,5 +10,5 @@ display.brightness = 0.5
 
 display.blink_rate = 3
 
-display.print(1234)
+display.print("H1V2")
 
