@@ -4,7 +4,7 @@ from time import sleep
 import random
 import sys
 
-pixels = neopixel.NeoPixel(board.D18, 4)
+pixels = neopixel.NeoPixel(board.D12, 4)
 
 if len(sys.argv) > 1 and sys.argv[1] == 'stop':
     for p in range(4):
