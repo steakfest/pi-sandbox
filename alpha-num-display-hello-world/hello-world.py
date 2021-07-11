@@ -20,9 +20,9 @@ class DoubleSegment():
 		leftDisplay.blink_rate = bRate
 		rightDisplay.blink_rate = bRate
 
-	def print(value):
-		leftDisplay.print(value)
-		rightDisplay.print(value)
+	def print(pval):
+		leftDisplay.print(pval)
+		rightDisplay.print(pval)
 
 doubleSegment = DoubleSegment(0x70, 0x71)
 
