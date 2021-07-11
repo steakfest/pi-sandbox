@@ -1,6 +1,8 @@
 import board
 from adafruit_ht16k33.segments import Seg14x4
 
+TAIL = "    "
+
 i2c = board.I2C()
 display = Seg14x4(i2c)
 
@@ -12,5 +14,5 @@ display.brightness = 0.5
 
 # display.print("H1V2")
 
-display.marquee("HOME RUN - JOHN MCGOWAN!")
+display.marquee("HOME RUN - JOHN MCGOWAN!" + TAIL)
 
