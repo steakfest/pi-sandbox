@@ -5,29 +5,38 @@ from adafruit_ht16k33.segments import Seg14x4
 
 TAIL = "    "
 
-i2c      = board.I2C()
-display  = Seg14x4(i2c)
-display2 = Seg14x4(i2c)
+class DoubleSegment():
+	"""A Class for managing two i2c alphanumeric Segments"""
+	def __init__(self, i2c, leftAddr, rightAddr):
+		i2c = board.I2C()
+		leftDisplay  = Seg14x4(i2c, leftAddr)
+		rightDisplay = Seg14x4(i2c, rightAddr)
 
-display  = Seg14x4(i2c, address=0x70)
-display2 = Seg14x4(i2c, address=0x71)
+	def brightness(bVal):
+		leftDisplay.brightness(bVal)
+		rightDisplay.brightness(bVal)
 
-display.brightness = 0.75
-display2.brightness = 0.75
+	def blink_rate(bRate):
+		leftDisplay.blink_rate = bRate
+		rightDisplay.blink_rate = bRate
 
-# display.blink_rate = 3
+	def print(value):
+		leftDisplay.print(value)
+		rightDisplay.print(value)
 
-# display.print("H1V2")
+doubleSegment = DoubleSegment()
 
-threads = []
+doubleSegment.print("JOHN")
 
-threads.append(threading.Thread(target=display.marquee, args=("HOME RUN" + TAIL,)))
-threads.append(threading.Thread(target=display2.marquee, args=("JOHN MCGOAN" + TAIL,)))
+# threads = []
 
-for thread in threads:
-	thread.start()
+# threads.append(threading.Thread(target=display.marquee, args=("HOME RUN" + TAIL,)))
+# threads.append(threading.Thread(target=display2.marquee, args=("JOHN MCGOAN" + TAIL,)))
 
-for thread in threads:
-	thread.join()
+# for thread in threads:
+# 	thread.start()
+
+# for thread in threads:
+# 	thread.join()
 
 
