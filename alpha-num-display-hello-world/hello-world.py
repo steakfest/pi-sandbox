@@ -12,15 +12,15 @@ class DoubleSegment():
 		leftDisplay  = Seg14x4(i2c, leftAddr)
 		rightDisplay = Seg14x4(i2c, rightAddr)
 
-	def brightness(bVal):
+	def brightness(self, bVal):
 		leftDisplay.brightness(bVal)
 		rightDisplay.brightness(bVal)
 
-	def blink_rate(bRate):
+	def blink_rate(self, bRate):
 		leftDisplay.blink_rate = bRate
 		rightDisplay.blink_rate = bRate
 
-	def print(pval):
+	def print(self, pval):
 		leftDisplay.print(pval)
 		rightDisplay.print(pval)
 
