@@ -7,22 +7,23 @@ TAIL = "    "
 
 class DoubleSegment():
 	"""A Class for managing two i2c alphanumeric Segments"""
+	
 	def __init__(self, leftAddr, rightAddr):
 		i2c = board.I2C()
-		leftDisplay  = Seg14x4(i2c, leftAddr)
-		rightDisplay = Seg14x4(i2c, rightAddr)
+		self.leftDisplay  = Seg14x4(i2c, leftAddr)
+		self.rightDisplay = Seg14x4(i2c, rightAddr)
 
 	def brightness(self, bVal):
-		leftDisplay.brightness(bVal)
-		rightDisplay.brightness(bVal)
+		self.leftDisplay.brightness(bVal)
+		self.rightDisplay.brightness(bVal)
 
 	def blink_rate(self, bRate):
-		leftDisplay.blink_rate = bRate
-		rightDisplay.blink_rate = bRate
+		self.leftDisplay.blink_rate = bRate
+		self.rightDisplay.blink_rate = bRate
 
 	def print(self, pval):
-		leftDisplay.print(pval)
-		rightDisplay.print(pval)
+		self.leftDisplay.print(pval)
+		self.rightDisplay.print(pval)
 
 doubleSegment = DoubleSegment(0x70, 0x71)
 
