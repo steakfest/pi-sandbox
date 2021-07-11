@@ -1,6 +1,6 @@
 import board
 import threading
-
+from time import sleep
 from adafruit_ht16k33.segments import Seg14x4
 
 TAIL = "    "
@@ -25,9 +25,17 @@ class DoubleSegment():
 		self.leftDisplay.print(pval)
 		self.rightDisplay.print(pval)
 
+
+	def marquee(message, repeat=False):
+		padded_message = "        " + message + "        "
+		for idx in range(len(padded_message)):
+			self.leftDisplay.print(padded_message[idx:4])
+			self.leftDisplay.print(padded_message[idx+4:4])
+			sleep(0.25)
+
 doubleSegment = DoubleSegment(0x70, 0x71)
 
-doubleSegment.print("JOHN")
+doubleSegment.marquee("JOHN")
 
 # threads = []
 
