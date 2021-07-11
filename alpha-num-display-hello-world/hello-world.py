@@ -8,7 +8,9 @@ display = Seg14x4(i2c, address=0x70)
 
 display.brightness = 0.5
 
-display.blink_rate = 3
+# display.blink_rate = 3
 
-display.print("H1V2")
+# display.print("H1V2")
+
+display.marquee("Hello World!!")
 
