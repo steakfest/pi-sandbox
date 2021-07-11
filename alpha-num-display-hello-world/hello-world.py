@@ -12,5 +12,5 @@ display.brightness = 0.5
 
 # display.print("H1V2")
 
-display.marquee("Hello World!!")
+display.marquee("HOME RUN - JOHN MCGOWAN!")
 
