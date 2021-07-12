@@ -30,9 +30,9 @@ class DoubleSegment():
 		padded_message = "        " + message + "        "
 		print("padded_message:[" + padded_message + "]")
 		for idx in range(len(padded_message)):
-			print("Printing: [" + padded_message[idx:4] + "][" + padded_message[idx+4:4] + "]" )
-			self.leftDisplay.print(padded_message[idx:4])
-			self.rightDisplay.print(padded_message[idx+4:4])
+			print("Printing: [" + padded_message[idx:idx+4] + "][" + padded_message[idx+4:idx+4+4] + "]" )
+			self.leftDisplay.print(padded_message[idx:idx+4])
+			self.rightDisplay.print(padded_message[idx+4:idx+4+4])
 			sleep(0.25)
 
 doubleSegment = DoubleSegment(0x70, 0x71)
