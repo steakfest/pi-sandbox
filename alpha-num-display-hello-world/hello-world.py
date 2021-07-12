@@ -29,8 +29,9 @@ class DoubleSegment():
 	def marquee(self, message, repeat=False):
 		padded_message = "        " + message + "        "
 		for idx in range(len(padded_message)):
+			print("Printing: [" + padded_message[idx:4] + "][" + padded_message[idx+4:4] + "]" )
 			self.leftDisplay.print(padded_message[idx:4])
-			self.leftDisplay.print(padded_message[idx+4:4])
+			self.rightDisplay.print(padded_message[idx+4:4])
 			sleep(0.25)
 
 doubleSegment = DoubleSegment(0x70, 0x71)
