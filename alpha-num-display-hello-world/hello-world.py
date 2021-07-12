@@ -2,6 +2,7 @@ import board
 import threading
 from time import sleep
 from adafruit_ht16k33.segments import Seg14x4
+import sys
 
 TAIL = "    "
 
@@ -37,7 +38,7 @@ class DoubleSegment():
 
 doubleSegment = DoubleSegment(0x70, 0x71)
 
-doubleSegment.marquee("JOHN")
+doubleSegment.marquee(sys.argv[1])
 
 # threads = []
 
