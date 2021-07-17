@@ -2,7 +2,7 @@ import sys
 import board
 import busio
 import digitalio
-import displayio
+# import displayio
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_sharpmemorydisplay
 from time import sleep
@@ -22,19 +22,9 @@ display = adafruit_sharpmemorydisplay.SharpMemoryDisplay(spi, scs, 400, 240)
 
 
 
-with open("../imagery/zoom-logo.bmp") as bitmap_file:
-	bitmap = displayio.OnDiskBitmap(bitmap_file)
+with Image.open("../imagery/zoom-logo.bmp") as bitmap_file:
 
-	tile_grid = displayio.TileGrid(bitmap)
-
-	group = displayio.Group()
-
-	group.append(tile_grid)
-
-	display.show(group)
-
-	while True:
-		pass
+	print(bitmap_file.format, bitmap_file.size, bitmap_file.mode)
 
 
 sys.exit()
