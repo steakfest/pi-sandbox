@@ -21,8 +21,9 @@ scs = digitalio.DigitalInOut(board.D6) # inverted chip select
 display = adafruit_sharpmemorydisplay.SharpMemoryDisplay(spi, scs, 400, 240)
 
 
+filename = sys.argv(1)
 
-with Image.open("imagery/zoomed-mlb-logo.bmp") as image:
+with Image.open(filename) as image:
 
 	print(image.format, image.size, image.mode)
 
