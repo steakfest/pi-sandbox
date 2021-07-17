@@ -22,9 +22,9 @@ display = adafruit_sharpmemorydisplay.SharpMemoryDisplay(spi, scs, 400, 240)
 
 
 
-with Image.open("../imagery/zoom-logo.bmp") as bitmap_file:
+with Image.open("../imagery/zoom-logo.png") as image:
 
-	print(bitmap_file.format, bitmap_file.size, bitmap_file.mode)
+	print(image.format, image.size, image.mode)
 
 
 sys.exit()
