@@ -24,21 +24,20 @@ display = adafruit_sharpmemorydisplay.SharpMemoryDisplay(spi, scs, 400, 240)
 filename = sys.argv[1]
 
 with Image.open(filename) as image:
+	print(image.format, image.size, image.mode)
+	convertedImage = image.convert(mode="1", dither=True).resize((400,240))
 
-	# print(image.format, image.size, image.mode)
-
-	# convertedImage = image.convert(mode="1", dither=True)
-
+	# Just show an image
 	# display.image(convertedImage)
-
 	# display.show()
-
 	# while True:
 	# 	pass
 
-	convertedImage = image.convert(mode="1", dither=True)
+	# Show an animation
 	while True:
-		for frame in ImageSequence.Iterator(convertedImage)
+		frameIndex = 0
+		for frame in ImageSequence.Iterator(convertedImage):
+			print(frameIndex)
 			display.image(frame)
 			display.show()
 			sleep(0.1)
