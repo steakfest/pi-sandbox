@@ -3,7 +3,7 @@ import board
 import busio
 import digitalio
 # import displayio
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageSequence
 import adafruit_sharpmemorydisplay
 from time import sleep
 
@@ -25,19 +25,28 @@ filename = sys.argv[1]
 
 with Image.open(filename) as image:
 
-	print(image.format, image.size, image.mode)
+	# print(image.format, image.size, image.mode)
+
+	# convertedImage = image.convert(mode="1", dither=True)
+
+	# display.image(convertedImage)
+
+	# display.show()
+
+	# while True:
+	# 	pass
 
 	convertedImage = image.convert(mode="1", dither=True)
-
-	display.image(convertedImage)
-
-	display.show()
-
 	while True:
-		pass
+		for frame in ImageSequence.Iterator(convertedImage)
+			display.image(frame)
+			display.show()
+			sleep(0.1)
 
 
 sys.exit()
+
+
 
 
 # Clear display.
