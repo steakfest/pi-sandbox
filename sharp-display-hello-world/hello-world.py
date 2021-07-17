@@ -26,6 +26,12 @@ with Image.open("imagery/zoom-logo.png") as image:
 
 	print(image.format, image.size, image.mode)
 
+	display.image(image)
+	display.show()
+
+	while True:
+		pass
+
 
 sys.exit()
 
