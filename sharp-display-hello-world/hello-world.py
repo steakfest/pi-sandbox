@@ -27,7 +27,10 @@ with Image.open(filename) as image:
 
 	print(image.format, image.size, image.mode)
 
-	display.image(image)
+	convertedImage = image.convert(mode="1", dither=True)
+
+	display.image(convertedImage)
+
 	display.show()
 
 	while True:
